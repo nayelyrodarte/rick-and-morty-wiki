@@ -1,18 +1,24 @@
 import React from 'react';
 import axios from 'axios';
+import { Grid } from '@material-ui/core';
 
 import MainContainer from '../components/MainContainer';
 import CharacterCard from '../components/CharacterCard';
+import CharacterContainer from '../components/CharactersContainer';
 
 function Index(props) {
   const displayCharacters = props.data.results.map((character) => (
-    <CharacterCard character={character} key={character.id} />
+    <Grid item xs={10} sm={6} md={5} lg={3} key={character.id}>
+      <CharacterCard character={character} />
+    </Grid>
   ));
 
   return (
-    <MainContainer>
-      <div>{displayCharacters}</div>
-    </MainContainer>
+    <div>
+      <MainContainer>
+        <CharacterContainer>{displayCharacters}</CharacterContainer>
+      </MainContainer>
+    </div>
   );
 }
 
