@@ -5,13 +5,11 @@ function CharacterCard({ character }) {
 
   return (
     <div>
-      <ul>
-        <img src={image} alt={`${name} avatar`} />
-        <p>{name}</p>
-        <p>{status}</p>
-        <p>{species}</p>
-        <p>{location.name}</p>
-      </ul>
+      <img src={image} alt={`${name} avatar`} />
+      <p>{name}</p>
+      <p>{status}</p>
+      <p>{species}</p>
+      <p>{location.name}</p>
     </div>
   );
 }
