@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 
 function MainContainer(props) {
   return (
-    <Container maxWidth='sm'>
+    <Container>
       <Navigation />
       <div>{props.children}</div>
     </Container>
