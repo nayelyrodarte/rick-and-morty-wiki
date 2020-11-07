@@ -6,7 +6,7 @@ import { Pagination } from '@material-ui/lab';
 const containerStyles = makeStyles({
   root: {
     flexGrow: 1,
-    backgroundColor: '#161a1d',
+    background: 'linear-gradient(to bottom, #159957, #155799);',
     borderRadius: '20px',
     padding: '1.5em',
     ['@media (min-width:780px)']: {},
