@@ -7,8 +7,11 @@ const searchBarStyles = makeStyles({
   },
   input: {
     width: 'auto',
+    height: '1.5em',
+    borderRadius: '10px',
     position: 'relative',
     margin: '1em auto',
+    border: 'solid #159857 2px',
   },
 });
 
