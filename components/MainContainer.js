@@ -10,7 +10,8 @@ function MainContainer(props) {
       <Head>
         <title>Rick & Morty Wiki</title>
       </Head>
-      <h1>Rick & Morty Wiki</h1>
+      <img src='/rick-and-morty-logo.png' alt='' />
+      <h2>Wiki</h2>
       {props.children}
     </Container>
   );
