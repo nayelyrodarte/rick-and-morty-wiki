@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Grid } from '@material-ui/core';
 import SearchBar from '../components/SearchBar';
+import Router from 'next/router';
 
 import MainContainer from '../components/MainContainer';
 import CharacterCard from '../components/CharacterCard';
 import CharacterContainer from '../components/CharactersContainer';
 
 function Index(props) {
-  const [currentPage, setCurrentPage] = useState('1');
   const [searchCharacter, setSearchCharacter] = useState('');
   const [characters, setCharacters] = useState(props.data.results);
 
@@ -17,7 +17,17 @@ function Index(props) {
   );
 
   const displayCharacters = filterCharacters.map((character) => (
-    <Grid item xs={10} sm={6} md={5} lg={3} key={character.id}>
+    <Grid
+      item
+      xs={10}
+      sm={6}
+      md={5}
+      lg={3}
+      key={character.id}
+      onClick={(e) =>
+        Router.push('/character/[id]', `/character/${character.id}`)
+      }
+    >
       <CharacterCard character={character} />
     </Grid>
   ));
