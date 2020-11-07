@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Grid } from '@material-ui/core';
+import SearchBar from '../components/SearchBar';
 
 import MainContainer from '../components/MainContainer';
 import CharacterCard from '../components/CharacterCard';
 import CharacterContainer from '../components/CharactersContainer';
 
 function Index(props) {
-  const displayCharacters = props.data.results.map((character) => (
+  const [currentPage, setCurrentPage] = useState('1');
+  const [searchCharacter, setSearchCharacter] = useState('');
+  const [characters, setCharacters] = useState(props.data.results);
+
+  const filterCharacters = characters.filter((character) =>
+    character.name.toLowerCase().includes(searchCharacter.toLowerCase())
+  );
+
+  const displayCharacters = filterCharacters.map((character) => (
     <Grid item xs={10} sm={6} md={5} lg={3} key={character.id}>
       <CharacterCard character={character} />
     </Grid>
@@ -16,6 +25,7 @@ function Index(props) {
   return (
     <div>
       <MainContainer>
+        <SearchBar search={setSearchCharacter} />
         <CharacterContainer>{displayCharacters}</CharacterContainer>
       </MainContainer>
     </div>
@@ -23,7 +33,7 @@ function Index(props) {
 }
 
 Index.getInitialProps = async () => {
-  let res = await axios.get('https://rickandmortyapi.com/api/character');
+  let res = await axios.get(`https://rickandmortyapi.com/api/character/`);
   let data = res.data;
 
   return { data };
