@@ -1,11 +1,13 @@
 import React from 'react';
+import StatusBar from '../components/StatusBar';
 import { makeStyles } from '@material-ui/styles';
 
 const cardStyles = makeStyles({
   root: {
-    backgroundColor: 'black',
+    backgroundColor: '#ebe8ce',
     borderRadius: '20px',
-    color: 'white',
+    boxShadow: '4px 2px 5px -3px #000000',
+    color: 'black',
     display: 'grid',
     fontFamily: 'Roboto',
     fontSize: '0.8em',
@@ -33,7 +35,7 @@ function CharacterCard({ character }) {
     <div className={styles.root}>
       <img src={image} alt={`${name} avatar`} className={styles.img} />
       <p className={styles.title}>{name}</p>
-      <p>{status}</p>
+      <StatusBar status={status} />
       <p>{species}</p>
       <p>{location.name}</p>
     </div>
