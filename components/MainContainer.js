@@ -7,8 +7,7 @@ const logoStyles = makeStyles({
   root: {
     width: '50%',
     display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    margin: '1.5em auto',
   },
   subHeader: {
     textAlign: 'center',
