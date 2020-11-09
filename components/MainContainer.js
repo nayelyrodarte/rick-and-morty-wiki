@@ -1,17 +1,38 @@
 import React from 'react';
-import Navigation from './Navigation';
 import { Container } from '@material-ui/core';
 import Head from 'next/head';
-import CharactersContainer from '../components/CharactersContainer';
+import { makeStyles } from '@material-ui/styles';
+
+const logoStyles = makeStyles({
+  root: {
+    width: '50%',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  subHeader: {
+    textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    margin: '2em',
+  },
+});
 
 function MainContainer(props) {
+  const styles = logoStyles();
   return (
     <Container>
       <Head>
         <title>Rick & Morty Wiki</title>
       </Head>
-      <img src='/rick-and-morty-logo.png' alt='' />
-      <h2>Wiki</h2>
+      <img
+        className={styles.root}
+        src='/rick-and-morty-logo.png'
+        alt='Rick and Morty logo'
+      />
+      <p className={styles.subHeader}>
+        Your interdimensional source of wisdom.{' '}
+      </p>
       {props.children}
     </Container>
   );
