@@ -7,8 +7,9 @@ const searchBarStyles = makeStyles({
     justifyContent: 'center',
   },
   input: {
+    marginBottom: '2em',
     width: 'auto',
-    height: '1.5em',
+    height: '2em',
     borderRadius: '10px',
     border: 'solid #159857 2px',
   },
