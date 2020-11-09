@@ -3,15 +3,19 @@ import { makeStyles } from '@material-ui/styles';
 
 const searchBarStyles = makeStyles({
   root: {
-    margin: '2em 0em',
+    display: 'flex',
+    justifyContent: 'center',
   },
   input: {
     width: 'auto',
     height: '1.5em',
     borderRadius: '10px',
-    position: 'relative',
-    margin: '1em auto',
     border: 'solid #159857 2px',
+  },
+  img: {
+    width: '3.5em',
+    position: 'relative',
+    top: '-1em',
   },
 });
 
@@ -20,10 +24,15 @@ function SearchBar({ search }) {
 
   return (
     <div className={styles.root}>
+      <img
+        className={styles.img}
+        src='/portal-gun.png'
+        alt='portal gun image'
+      />
       <input
         className={styles.input}
         type='text'
-        placeholder='Find by name...'
+        placeholder='Search by name'
         onChange={(e) => search(e.target.value)}
       />
     </div>
