@@ -29,9 +29,6 @@ function MainContainer(props) {
         src='/rick-and-morty-logo.png'
         alt='Rick and Morty logo'
       />
-      <p className={styles.subHeader}>
-        Your interdimensional source of wisdom.{' '}
-      </p>
       {props.children}
     </Container>
   );
