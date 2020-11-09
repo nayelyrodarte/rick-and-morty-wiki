@@ -14,6 +14,10 @@ const cardStyles = makeStyles({
     lineHeight: '1px',
     padding: '0.2em',
     textAlign: 'center',
+    transition: 'transform .2s',
+    '&:hover': {
+      transform: 'scale(1.5)',
+    },
   },
   img: {
     borderRadius: '50%',
@@ -37,7 +41,6 @@ function CharacterCard({ character }) {
       <p className={styles.title}>{name}</p>
       <StatusBar status={status} />
       <p>{species}</p>
-      <p>{location.name}</p>
     </div>
   );
 }
