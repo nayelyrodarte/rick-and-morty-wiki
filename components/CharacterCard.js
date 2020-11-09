@@ -14,10 +14,6 @@ const cardStyles = makeStyles({
     lineHeight: '1px',
     padding: '0.2em',
     textAlign: 'center',
-    transition: 'transform .2s',
-    '&:hover': {
-      transform: 'scale(1.5)',
-    },
   },
   img: {
     borderRadius: '50%',
